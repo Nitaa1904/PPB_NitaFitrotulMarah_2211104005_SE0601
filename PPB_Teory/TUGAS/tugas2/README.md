@@ -20,9 +20,9 @@ Screenshot
 
 ## Cara Menjalankan
 1. Instal <b>Dart SDK.</b>
-2. Simpan kode di atas dalam file main.dart.
+2. Simpan kode di atas dalam file first_run.dart.
 3. Jalankan perintah berikut di terminal:
-<em>dart run main.dart</em>
+<em>dart run first_run.dart</em>
 
 <b>Output</b>
 
