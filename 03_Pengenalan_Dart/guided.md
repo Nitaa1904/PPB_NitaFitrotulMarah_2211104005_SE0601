@@ -57,3 +57,36 @@ Input
 output
 
 <img src="images/output_fungsi.png" alt="fungsi" width="400">
+
+## GUIDED
+### Soal 1
+
+<img src="images/gambar1.png" alt="fungsi" width="400">
+
+output
+
+<img src="images/ouput1.png" alt="fungsi" width="400">
+
+### soal 2
+
+Input
+
+<img src="images/gambar2.png" alt="fungsi" width="400">
+
+output
+
+<img src="images/output2.png" alt="fungsi" width="400">
+
+### Soal 3
+
+input 
+
+<img src="images/gambar3.png" alt="fungsi" width="400">
+
+output
+
+<img src="images/output3.png" alt="fungsi" width="400">
+
+
+
+
