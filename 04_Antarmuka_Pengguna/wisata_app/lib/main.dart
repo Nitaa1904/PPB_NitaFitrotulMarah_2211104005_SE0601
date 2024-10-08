@@ -44,14 +44,11 @@ class PantaiNusakambanganPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(15.0),
-              child: Image.asset(
-                'assets/pantai_nusakambangan.jpg', // Gambar lokal
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
+            Image.network(
+              'https://cdn0-production-images-kly.akamaized.net/HL3hE9zaAQP1SO0bRZwgoAJDM1A=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/644703/original/nusakambangan%20pic.jpg',
+              height: 200,
+              width: 300,
+              fit: BoxFit.cover, // untuk menyesuaikan gambar di dalam kotak
             ),
             SizedBox(height: 20),
             Padding(
