@@ -9,6 +9,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: WisataBanyumasPage(),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
     );
   }
 }
@@ -18,23 +22,23 @@ class WisataBanyumasPage extends StatelessWidget {
   final List<Wisata> wisataList = [
     Wisata(
       name: 'Pantai Nusakambangan',
-      imageUrl: 'https://cdn0-production-images-kly.akamaized.net/HL3hE9zaAQP1SO0bRZwgoAJDM1A=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/644703/original/nusakambangan%20pic.jpg',
-      description: 'Pantai ini menawarkan pemandangan alam yang eksotis dan air laut yang jernih, cocok untuk petualang dan pecinta alam.',
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl2Kmtgm07TMtnPJTHt3k1DTZdGtjL4LknjQ&s',
+      description: 'Pantai ini menawarkan pemandangan alam yang eksotis dan air laut yang jernih.',
     ),
     Wisata(
       name: 'Baturraden',
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Baturraden_%28Jawa_Tengah%2C_Indonesia%29.jpg',
-      description: 'Baturraden terkenal dengan keindahan alam pegunungan, udara segar, dan berbagai wahana rekreasi alam.',
+      imageUrl: 'https://awsimages.detik.net.id/community/media/visual/2023/09/05/lokawisata-baturraden-1.jpeg?w=800',
+      description: 'Baturraden terkenal dengan keindahan alam pegunungan dan udara segar.',
     ),
     Wisata(
       name: 'Curug Cipendok',
-      imageUrl: 'https://www.itrip.id/wp-content/uploads/2020/12/Curug-Cipendok-Banyumas.jpg',
-      description: 'Curug Cipendok adalah air terjun yang memiliki ketinggian sekitar 92 meter dengan panorama alam yang memukau.',
+      imageUrl: 'https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/867/2024/01/15/1-742884947.png',
+      description: 'Curug Cipendok adalah air terjun tinggi dengan panorama alam yang memukau.',
     ),
     Wisata(
       name: 'Taman Andhang Pangrenan',
-      imageUrl: 'https://www.galeriwisata.com/wp-content/uploads/2020/06/Taman-Andhang-Pangrenan.jpg',
-      description: 'Taman kota ini menjadi tempat yang cocok untuk bersantai bersama keluarga dan menikmati suasana sore yang asri.',
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_lUsfskujOV4lbt1Bn51p1eWP3faXUkv3Mg&s',
+      description: 'Taman kota ini cocok untuk bersantai dan menikmati suasana asri.',
     ),
   ];
 
@@ -42,74 +46,77 @@ class WisataBanyumasPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Rekomendasi Wisata Banyumas',
-          style: TextStyle(fontSize: 24, color: Colors.white),
-        ),
-        backgroundColor: const Color(0xFF005DA3), // Warna biru laut
+        title: Text('Wisata Banyumas', style: TextStyle(fontSize: 20)),
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16.0),
         itemCount: wisataList.length,
         itemBuilder: (context, index) {
           final wisata = wisataList[index];
-          return Card(
-            margin: EdgeInsets.only(bottom: 16.0),
-            elevation: 4,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
-                  child: Image.network(
-                    wisata.imageUrl,
-                    height: 200,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        wisata.name,
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blueAccent,
-                        ),
+          return Center(
+            child: Card(
+              elevation: 4,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Container(
+                width: 250, // Menentukan lebar dan tinggi card agar berbentuk persegi
+                height: 300,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
+                      child: Image.network(
+                        wisata.imageUrl,
+                        fit: BoxFit.cover,
+                        height: 150,
+                        width: double.infinity,
                       ),
-                      SizedBox(height: 8),
-                      Text(
-                        wisata.description,
-                        style: TextStyle(fontSize: 16),
-                      ),
-                      SizedBox(height: 8),
-                      ElevatedButton(
-                        onPressed: () {
-                          // Fungsi aksi, bisa ditambahkan untuk navigasi atau detail lebih lanjut
-                        },
-                        child: Text(
-                          'Kunjungi Sekarang',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF005DA3), // Warna biru laut
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            wisata.name,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black87,
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                        ),
+                          SizedBox(height: 4),
+                          Text(
+                            wisata.description,
+                            style: TextStyle(fontSize: 12, color: Colors.black54),
+                            textAlign: TextAlign.center,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          SizedBox(height: 8),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Fungsi aksi ketika tombol diklik
+                              print('${wisata.name} dikunjungi');
+                            },
+                            child: Text('Kunjungi'),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              minimumSize: Size(100, 40), // Ukuran tombol yang lebih proporsional
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           );
         },
