@@ -10,6 +10,10 @@ A simple Flutter application that displays a list of tourist destinations in Ban
 
 ![alt text](code.png)
 
+## Output
+
+![alt text](<Screenshot 2024-10-11 154635.png>)
+
 ## Description
 The Wisata Banyumas App is a simple Flutter application that lists various tourist destinations in Banyumas, Indonesia. It displays information such as:
 
