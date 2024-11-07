@@ -16,7 +16,7 @@
 //         primarySwatch: Colors.blue,
 //         visualDensity: VisualDensity.adaptivePlatformDensity,
 //       ),
-//       home: Mypage(),
+//       home: Mypage()
 //     );
 //   }
 // }
